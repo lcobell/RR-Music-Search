@@ -1,13 +1,12 @@
 import "./App.css";
-import { useEffect, useState, Fragment, suspense } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useState, Fragment, Suspense } from "react";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Gallery from "./components/Gallery";
 import Searchbar from "./components/Searchbar";
-import AlbumView from "./components/AlbumView";
-import ArtistView from "./components/ArtistView";
+// import AlbumView from "./components/AlbumView";
+// import ArtistView from "./components/ArtistView";
 import Spinner from "./components/Spinner";
-import { createResource as fetchData } from "./helper";
-import React, { lazy, Suspense } from "react";
+import { createResource as fetchData } from "./helper.js";
 
 // import { DataContext } from './context/DataContext'
 
@@ -17,7 +16,7 @@ function App() {
   //   let [data, setData] = useState([]); (commented out to try out suspense and see whats happening in dev tools)
   let [data, setData] = useState(null);
 
-  const API_URL = "https://itunes.apple.com/search?term=";
+  //   const API_URL = "https://itunes.apple.com/search?term=";
   // added for suspense
   useEffect(() => {
     if (searchTerm) {
@@ -46,6 +45,7 @@ function App() {
 
   const handleSearch = (e, term) => {
     e.preventDefault();
+    console.log(term);
     setSearchTerm(term);
   };
 

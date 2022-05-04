@@ -6,7 +6,7 @@ const fetchSearch = async (searchTerm) => {
   return resData.results;
 };
 
-const wrapPromise = async (promise) => {
+const wrapPromise = (promise) => {
   let status = "pending";
   let result = "";
   let suspender = promise.then(
